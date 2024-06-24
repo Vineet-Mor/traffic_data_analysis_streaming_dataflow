@@ -2,6 +2,7 @@
 To build a pipeline to handle workflow where streaming traffic data (including speed) is ingested from Pub/Sub to Dataflow, processed to calculate the average speed, and then stored in BigQuery. This workflow will be managed by Cloud Build and Cloud Functions.
 
 Instructions:
+
 Step 1: Create a Service Account
 Navigate to IAM & Admin:
 - Open the Google Cloud Console and go to the IAM & Admin section.
@@ -34,6 +35,7 @@ Create a Cloud Function to publish traffic data to Pub/Sub.
 
 Step 7: Build and Deploy
 Build and Deploy the Cloud Function using "gcloud functions deploy publish_traffic_data".
+
 Create Cloud Build Trigger:
 - Navigate to Cloud Build in the Google Cloud Console.
 - Click "Create Trigger".
