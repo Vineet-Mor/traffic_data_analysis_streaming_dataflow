@@ -1,0 +1,28 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/my-function:latest', '.']
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['functions', 'deploy', 'my-function',
+          '--runtime', 'python39',
+          '--trigger-http',
+          '--allow-unauthenticated',
+          '--source', '.']
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: ['dataflow', 'jobs', 'run', 'traffic-dataflow-job',
+          '--gcs-location', 'gs://traffic_staging/dataflow_job.py',
+          '--region', 'us-central1',
+          '--parameters', 'inputTopic=projects/quixotic-treat-419302/topics/traffic-data,outputTable=quixotic-treat-419302:traffic_data.average_speed']
+
+substitutions:
+  _PROJECT_ID: "quixotic-treat-419302"
+
+triggers:
+- github:
+    branch: main
+    build:
+      step: - name: 'gcr.io/cloud-builders/gcloud'
+              args: ['dataflow', 'jobs', 'run', 'traffic-dataflow-job',
+                     '--gcs-location', 'gs://traffic_staging/dataflow_job.py',
+                     '--region', 'us-central1',
+                     '--parameters', 'inputTopic=projects/quixotic-treat-419302/topics/traffic-data,outputTable=quixotic-treat-419302:traffic_data.average_speed']
