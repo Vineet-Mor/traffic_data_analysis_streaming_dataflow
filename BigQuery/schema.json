@@ -1,0 +1,5 @@
+[
+  {"name": "timestamp", "type": "TIMESTAMP"},
+  {"name": "speed", "type": "FLOAT"},
+  {"name": "location", "type": "STRING"}
+]
