@@ -1,2 +1,2 @@
-gcloud pubsub topics create traffic-data
-gcloud pubsub subscriptions create traffic-data-sub --topic=traffic-data
+!gcloud pubsub topics create traffic-data
+!gcloud pubsub subscriptions create traffic-data-sub --topic=traffic-data
