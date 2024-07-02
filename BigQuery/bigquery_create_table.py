@@ -8,9 +8,13 @@ dataset = client.create_dataset(dataset, timeout=30)
 
 print("Created dataset {}.{}".format(client.project, dataset.dataset_id))
 
-schema = [ bigquery.SchemaField("item_id", "INTEGER", mode="REQUIRED"), bigquery.SchemaField("product", "STRING", mode="REQUIRED"), bigquery.SchemaField("price", "INTEGER", mode="REQUIRED"), ]
+schema = [ bigquery.SchemaField(
+  {"name": "timestamp", "type": "TIMESTAMP"},
+  {"name": "speed", "type": "FLOAT"},
+  {"name": "location", "type": "STRING"}
+]
 
-table_id = dataset_id+f".sales_2024_{month}_{date}"
+table_id = dataset_id+"traffic_data.average_speed"
 table = bigquery.Table(table_id, schema=schema) 
 table = client.create_table(table)
 
