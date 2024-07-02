@@ -12,3 +12,6 @@ def publish_traffic_data(request):
         return 'Message published.'
     else:
         return 'Invalid request.', 400
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080)
