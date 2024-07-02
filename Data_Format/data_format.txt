@@ -1,0 +1,4 @@
+{
+  "speed": [55, 60, 62],
+  "location": "sensor_123"
+}
