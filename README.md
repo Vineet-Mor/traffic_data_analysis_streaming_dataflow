@@ -19,7 +19,7 @@ Navigate to IAM & Admin:
 -Click "Done".
 
 Step 2: Setup Pub/Sub
-Create a Pub/Sub Topic and Subscription. 
+Create a Pub/Sub topic and subscription setup where data is automatically published from one Pub/Sub topic to another, facilitated by triggering a Cloud Function. 
 
 Step 3: Setup BigQuery
 Create a BigQuery Dataset and Table
