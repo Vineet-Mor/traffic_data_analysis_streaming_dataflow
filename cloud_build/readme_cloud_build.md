@@ -51,8 +51,12 @@ The `cloudbuild.yaml` file performs the following steps:
     substitutions:
       _PROJECT_ID: "quixotic-treat-419302"
     ```
+5. **Options**:
+    - `logging`: Set to `CLOUD_LOGGING_ONLY` to specify logging behavior.
+    - `logsBucket`: Specifies the Cloud Storage bucket `gs://newbucketvm` for storing logs.
 
-5. **Triggers**:
+
+6. **Triggers**:
     - Sets up a trigger for GitHub commits to the main branch.
     - Runs the Dataflow job when changes are pushed to the main branch.
     
