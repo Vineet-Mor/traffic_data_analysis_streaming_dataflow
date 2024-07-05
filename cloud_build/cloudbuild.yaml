@@ -17,6 +17,11 @@ steps:
 substitutions:
   _PROJECT_ID: "quixotic-treat-419302"
 
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+  logsBucket: gs://newbucketvm
+
 triggers:
 - github:
     branch: main
