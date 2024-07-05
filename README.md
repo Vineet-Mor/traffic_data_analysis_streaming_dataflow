@@ -1,5 +1,5 @@
 # traffic_data_analysis_streaming_dataflow
-To build a pipeline to handle workflow where streaming traffic data (including speed) is ingested from Pub/Sub to Dataflow, processed to calculate the average speed, and then stored in BigQuery. This workflow will be managed by Cloud Build and Cloud Functions.
+To build a pipeline to handle workflow where streaming traffic data (including speed) is ingested from Pub/Sub to Dataflow, processed to calculate the average speed, and then stored in BigQuery. This workflow will be managed by Cloud Build and Cloud Functions. The data is sent to a Pub/Sub topic by various sensors, which is then published (using the push method of Pub/Sub) to another Pub/Sub topic with the help of triggers because this allows for efficient and scalable processing and routing of data streams. By leveraging triggers, the system can automatically respond to incoming data, ensuring timely and reliable delivery to the appropriate topic for further processing or analysis.
 
 Instructions:
 
